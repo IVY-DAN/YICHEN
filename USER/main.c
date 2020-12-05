@@ -35,14 +35,8 @@ extern	void ADC_START(void);
 extern __IO uint16_t ADCConvertedValue;
 int main(void)
 {     
-  /* USART1 configured as follow:
-        - BaudRate = 115200 baud  
-        - Word Length = 8 Bits
-        - One Stop Bit
-        - No parity
-        - Hardware flow control disabled (RTS and CTS signals)
-        - Receive and transmit enabled
-  */
+	int lastValue=0,maxValue=0,minValue=0;
+	int diff =0 ;
   UART_Print_Init(115200);
 
   /* Output a message on Hyperterminal using printf function */
@@ -50,10 +44,21 @@ int main(void)
 
 	ADC_START();
 	
+  Delay(10000);
+	lastValue=ADCConvertedValue;
+  maxValue=ADCConvertedValue;
+  minValue=ADCConvertedValue;
+	
 	while (1)
 	{
 		Delay(900000);
+    maxValue = ADCConvertedValue>maxValue?  ADCConvertedValue:maxValue;
+    minValue = ADCConvertedValue<minValue?  ADCConvertedValue:minValue;
+    diff = ADCConvertedValue - lastValue;
+		lastValue=ADCConvertedValue;
 		printf("\r\nADCConvertedValue=%d\r\n",ADCConvertedValue);
+    printf("diff=%d\r\n",diff);
+    printf("maxValue=%d,minValue=%d\r\n",maxValue,minValue);
 	}	
 }
 

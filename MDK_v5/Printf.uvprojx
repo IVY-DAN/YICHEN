@@ -386,6 +386,11 @@
               <FileType>1</FileType>
               <FilePath>..\USER\at32f4xx_it.c</FilePath>
             </File>
+            <File>
+              <FileName>myADC.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USER\myADC.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -430,6 +435,16 @@
               <FileName>at32f4xx_usart.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Libraries\AT32F4xx_StdPeriph_Driver\src\at32f4xx_usart.c</FilePath>
+            </File>
+            <File>
+              <FileName>at32f4xx_adc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Libraries\AT32F4xx_StdPeriph_Driver\src\at32f4xx_adc.c</FilePath>
+            </File>
+            <File>
+              <FileName>at32f4xx_dma.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Libraries\AT32F4xx_StdPeriph_Driver\src\at32f4xx_dma.c</FilePath>
             </File>
             <File>
               <FileName>misc.c</FileName>
